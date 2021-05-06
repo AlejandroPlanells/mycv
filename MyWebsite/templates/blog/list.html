@@ -1,0 +1,69 @@
+{% extends "../base.html" %}
+{% load blog_tags %}
+
+<!-- ************************** -->
+{% block titulo %}Blog{% endblock %}
+{% block contenedor %}
+
+<!-- Blog Subpage -->
+<section class="animated-section start-page ps section-active ps--theme_default">
+<div class="page-title">
+  <h2>Blog</h2>
+</div>
+
+    {% if tag %}
+        <h2>Post con el tag: "{{ tag.name }}"</h2> <br>
+    {% endif %}
+
+
+
+<div class="section-content">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="blog-masonry two-columns clearfix">
+
+
+        <!-- Blog Post -->
+          {% for post in posts %}
+
+        <div class="item post-1">
+          <div class="blog-card">
+            <div class="media-block">
+
+
+                  {% for tag in post.tags.all %}
+                      {% if forloop.first %}
+                        <div class="category">
+                            <a href="{% url "blog:post_list_by_tag" tag.slug %}" title="Ver todos los post con el tag {{ tag.name }}">{{ tag.name }}</a>
+                        </div>
+                      {% endif %}
+                  {% endfor %}
+
+              <a href="{{ post.get_absolute_url }}">
+                <img src="{{ post.foto.url }}" class="size-blog-masonry-image-two-c" alt="{{ post.title }}" title="" />
+                <div class="mask"></div>
+              </a>
+            </div>
+            <div class="post-info">
+              <div class="post-date">Publicado {{ post.publish }} por {{ post.author }}</div>
+              <a href="{{ post.get_absolute_url }}">
+                <h4 class="blog-item-title">{{ post.title }}</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+
+          {% endfor %}
+        <!-- End of Blog Post 1 -->
+
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</section>
+<!-- End of Blog Subpage -->
+{% endblock %}

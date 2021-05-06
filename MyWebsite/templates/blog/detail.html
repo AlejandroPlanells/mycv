@@ -1,0 +1,152 @@
+{% extends "../base.html" %}
+{% load static %}
+{% load blog_tags %}
+
+<!-- ************************** -->
+{% block title %}{{ post.title }}{% endblock %}
+{% block contenedor %}
+
+<!-- Blog Subpage -->
+            <div class="single-page-content">
+
+              <article class="post">
+
+                <div class="post-thumbnail">
+                  <img src="{{ post.foto.url }}" width="100%" alt="image">
+                </div>
+
+                <div class="post-content">
+                  <!-- /Entry header -->
+                  <header class="entry-header">
+                    <!-- Entry meta -->
+                    <div class="entry-meta entry-meta-top">
+                      <span><a href="{% url "app_pages:inicio" %}" rel="category tag">UI</a></span>
+                    </div>
+                    <!-- /Entry meta -->
+
+                    <h2 class="entry-title">{{ post.title }}</h2>
+                  </header>
+                  <!-- /Entry header -->
+
+                  <!-- Entry content -->
+                  <div class="entry-content">
+                    <div class="row">
+                      <div class=" col-xs-12 col-sm-12 ">
+                        <div class="col-inner">
+                            <p>{{ post.body|markdown }}</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Entry content -->
+
+                  <div class="entry-meta entry-meta-bottom">
+                    <div class="date-author">
+                      <span class="entry-date">
+                        <a href="#" rel="bookmark">
+                          <i class="far fa-clock"></i> <span class="entry-date">{{ post.publish }}</span>
+                        </a>
+                      </span>
+                      <span class="author vcard">
+                        <a class="url fn n" href="#" rel="author"> <i class="fas fa-user"></i> {{ post.author }}</a>
+                      </span>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="entry-share btn-group share-buttons">
+                      <a href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" class="btn" target="_blank" title="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+
+                      <a href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" class="btn" target="_blank" title="Share on Twitter">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+
+                      <a href="#" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn" title="Share on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                    </div>
+                    <!-- /Share Buttons -->
+                  </div>
+
+                  <div class="post-tags">
+                    <div class="tags">
+                        {% for tag in post.tags.all %}
+                            <a href="{% url "blog:post_list_by_tag" tag.slug %}" title="Ver todos los post con el tag > {{ tag.name }} <" rel="tag">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                  </div>
+                    <!-- commends -->
+                    <div id="comments" class="comments-area">
+                        <div class="block-title">
+                            {% with comments.count as total_comments %}
+                                <h3>
+                                    {{ total_comments }} Comentario{{ total_comments|pluralize }}
+                                </h3>
+                            {% endwith %}
+                        </div>
+                        <ol class="comment-list">
+                            {% for comment in comments %}
+                                <li id="comment-7" class="comment even thread-even depth-1">
+                                    <article id="div-comment-7" class="comment-body">
+                                        <footer class="comment-meta">
+                                            <div class="comment-author vcard" style="color: #9e9e9e">
+                                                {{ comment.nombre }} <small>| {{ comment.created }}</small>
+
+                                            </div>
+                                            {{ comment.body|linebreaks }}
+                                        </footer>
+                                    </article>
+                                </li>
+                                <br>
+                            {% empty %}
+                                <p>Ningun comentario, de momento.</p>
+                            {% endfor %}
+                        </ol><!-- .comment-list -->
+
+                        <br>
+
+                        <!-- RESPUESTA COMENTARIOS -->
+                        <div id="respond" class="comment-respond">
+                            {% if new_comment %}
+                                <h2>Tu comentario ha sido añadido correctamente.</h2>
+                            {% else %}
+                                <h3 id="reply-title" class="block-title">Dejar un comentario </h3>
+
+                                <form method="post" id="commentform" class="comment-form" novalidate="">
+                                    {% csrf_token %}
+                                    <div class="form-group form-group-with-icon comment-form-message">
+                                        <textarea id="comment" class="form-control" name="{{ comment_form.body.name }}" placeholder="Comentario" cols="45" rows="8" aria-required="true"></textarea>
+                                        <div class="form-control-border"></div><i class="form-control-icon fa fa-comment"></i></div>
+
+                                    <div class="form-group form-group-with-icon comment-form-author">
+                                        <input id="author" class="form-control" name="{{ comment_form.nombre.name }}" type="text" placeholder="Nombre"size="30" aria-required="true">
+                                        <div class="form-control-border"></div><i class="form-control-icon fa fa-user"></i></div>
+
+                                    <div class="form-group form-group-with-icon comment-form-email">
+                                        <input id="email" class="form-control" name="{{ comment_form.email.name }}" type="text" placeholder="Email" size="30" aria-required="true" >
+                                        <div class="form-control-border"></div><i class="form-control-icon fa fa-envelope"></i></div>
+
+                                    <!-- <p class="comment-form-cookies-consent">
+                                        <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" >
+                                        <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
+                                    </p> -->
+
+                                    <p class="form-submit">
+                                        <input name="submit" type="submit" id="submit" class="submit" value="Añadir comentario">
+                                    </p>
+
+                                    <input type="hidden" id="ak_js" name="ak_js" value="238">
+                                    <textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea>
+                                </form>
+
+                        {% endif %}
+                    </div><!-- #respond -->
+                </div><!-- end commends -->
+                </div>
+              </article>
+            </div>
+
+<!-- End of Blog Subpage -->
+{% endblock %}
