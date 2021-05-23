@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'app_blog.apps.BlogConfig',
     'taggit',
 
+
 ]
 
 MIDDLEWARE = [
@@ -108,6 +109,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     '/static/',
@@ -120,3 +122,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = secret_keys.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = secret_keys.EMAIL_HOST_PASSWORD
