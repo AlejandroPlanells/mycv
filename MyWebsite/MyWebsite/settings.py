@@ -28,9 +28,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'ckeditor',
+    'ckeditor_uploader',
+
     'app_pages.apps.PagesConfig',
     'app_blog.apps.BlogConfig',
+    'app_portfolio.apps.PortfolioConfig',
+
     'taggit',
+
 
 
 ]
@@ -129,3 +136,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = secret_keys.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = secret_keys.EMAIL_HOST_PASSWORD
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}

@@ -9,7 +9,7 @@ import json
 from django.template.loader import render_to_string
 from django.shortcuts import redirect
 from django.core.mail import EmailMessage
-
+from django.contrib import messages
 from .forms import ContactForm
 # ----------------------
 
@@ -21,7 +21,7 @@ class InicioPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['inicio'] = "t"
+        context['inicio'] = "inicio"
         return context
 
 
@@ -30,7 +30,7 @@ class SobreMiPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['sobremi'] = "t"
+        context['sobremi'] = "sobremi"
         return context
 
 
@@ -39,7 +39,7 @@ class ResumenPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['resumen'] = "t"
+        context['resumen'] = "resumen"
         return context
 
 
@@ -49,7 +49,7 @@ class ContactarPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['contact_form'] = ContactForm
-        context['contactar'] = "t"
+        context['contactar'] = "contactar"
         return context
 
     def post(self, request, *args, **kwargs):
@@ -75,6 +75,7 @@ class ContactarPageView(TemplateView):
         )
         email_message.content_subtype = 'html'
         email_message.send()
+        messages.info(request, 'Tu email se ha enviado correctamente, sera revisado lo antes posible, gracias!')
 
         return redirect('app_pages:inicio')
 

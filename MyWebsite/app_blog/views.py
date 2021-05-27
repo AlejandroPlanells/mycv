@@ -17,7 +17,7 @@ def post_list(request, tag_slug=None):
         tag = get_object_or_404(Tag, slug=tag_slug)
         object_list = object_list.filter(tags__in=[tag])
 
-    paginator = Paginator(object_list, 6) # 3 posts in each page
+    paginator = Paginator(object_list, 4) # 3 posts in each page
     page_number = request.GET.get('page')
 
     page_obj = paginator.get_page(page_number)
@@ -33,8 +33,9 @@ def post_list(request, tag_slug=None):
     return render(request,
                   'blog/list.html',
                   {'page_obj': page_obj,
-                  'posts': posts,
-                  'tag': tag})
+                   'posts': posts,
+                   'tag': tag,
+                   'blog': "blog", })
 
 
 def post_detail(request, year, month, day, post):
@@ -46,7 +47,6 @@ def post_detail(request, year, month, day, post):
 
     # List of active comments for this post
     comments = post.comments.filter(active=True)
-
     new_comment = None
 
     if request.method == 'POST':

@@ -61,24 +61,24 @@
             <ul class="main-menu">
               <li class="active">
                 <a href="{% url "app_pages:inicio" %}" class="nav-anim">
-                  <span class="menu-icon lnr lnr-home" {% if inicio == "t" %}style="color: #00abff"{% endif %}></span>
+                  <span class="menu-icon lnr lnr-home" {% if inicio == "inicio" %}style="color: #00abff"{% endif %}></span>
                   <span class="link-text">Inicio</span>
                 </a>
               </li>
               <li>
                 <a href="{% url "app_pages:sobremi" %}" class="nav-anim">
-                  <span class="menu-icon lnr lnr-user" {% if sobremi == "t" %}style="color: #00abff"{% endif %}></span>
+                  <span class="menu-icon lnr lnr-user" {% if sobremi == "sobremi" %}style="color: #00abff"{% endif %}></span>
                   <span class="link-text">Sobre mi</span>
                 </a>
               </li>
               <li>
                 <a href="{% url "app_pages:resumen" %}" class="nav-anim">
-                  <span class="menu-icon lnr lnr-graduation-hat" {% if resumen == "t" %}style="color: #00abff"{% endif %}></span>
+                  <span class="menu-icon lnr lnr-graduation-hat" {% if resumen == "resumen" %}style="color: #00abff"{% endif %}></span>
                   <span class="link-text">Resumen</span>
                 </a>
               </li>
               <li>
-                <a href="" class="nav-anim">
+                <a href="{% url "portfolio" %}" class="nav-anim">
                   <span class="menu-icon lnr lnr-briefcase"></span>
                   <span class="link-text">Portfolio</span>
                 </a>
@@ -91,7 +91,7 @@
               </li>
               <li>
                 <a href="{% url "app_pages:contactar" %}" class="nav-anim">
-                  <span class="menu-icon lnr lnr-envelope" {% if contactar == "t" %}style="color: #00abff"{% endif %}></span>
+                  <span class="menu-icon lnr lnr-envelope" {% if contactar == "contactar" %}style="color: #00abff"{% endif %}></span>
                   <span class="link-text">Contactar</span>
                 </a>
               </li>

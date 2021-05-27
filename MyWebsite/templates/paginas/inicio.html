@@ -4,6 +4,13 @@
 
 <!-- Home Subpage -->
   <section class="animated-section start-page ps section-active ps--theme_default">
+
+      {% if messages %}
+            {% for message in messages %}
+                <div style="width:auto;margin-top:-20px;padding:10px ;height:auto;position: absolute; background: #00abff; border-radius: 5px;color:white"><i class="fas fa-info-circle" style="margin-right:10px;"></i>{{ message }}</div>
+            {% endfor %}
+      {% endif %}
+
     <div class="section-content vcentered">
 
         <div class="row">

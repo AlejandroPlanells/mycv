@@ -109,14 +109,8 @@
 
                         <!-- RESPUESTA COMENTARIOS -->
                         <div id="respond" class="comment-respond">
-                        {% if test %}
-                        <h1>Ya has comentado</h1>
-                        {% else %}
-
-
-
                             {% if new_comment %}
-                                <h2>Tu comentario ha sido añadido correctamente.</h2>
+                                <h2>Tu comentario se publicara cuando sea aprobado.</h2>
                             {% else %}
                                 <h3 id="reply-title" class="block-title">Dejar un comentario </h3>
 
@@ -146,9 +140,7 @@
                                     <input type="hidden" id="ak_js" name="ak_js" value="238">
                                     <textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea>
                                 </form>
-
-                        {% endif %}
-                        {% endif %}
+                            {% endif %}
                     </div><!-- #respond -->
                 </div><!-- end commends -->
                 </div>
