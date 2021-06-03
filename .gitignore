@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 .env
-/MyWebsite/MyWebsite/secret_keys.py
+/MyWebsite/MyProject/secret_keys.py

@@ -3,6 +3,8 @@ from .db import MYSQL as BD
 import os
 from . import secret_keys
 
+from datetime import timedelta
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     'app_pages.apps.PagesConfig',
     'app_blog.apps.BlogConfig',
     'app_portfolio.apps.PortfolioConfig',
+    'app_score.apps.AppScoreConfig',
 
     'taggit',
 
@@ -52,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'MyWebsite.urls'
+ROOT_URLCONF = 'MyProject.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'MyWebsite.wsgi.application'
+WSGI_APPLICATION = 'MyProject.wsgi.application'
 
 
 # Database
@@ -143,3 +146,6 @@ CKEDITOR_CONFIGS = {
         'toolbar': None,
     },
 }
+
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+

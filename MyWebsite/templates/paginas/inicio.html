@@ -16,6 +16,22 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="title-block">
+
+                {% for stat in stats %}
+                    Resultado: {{ stat.resultado }} <br>
+                    Nombre del equipo: {{ stat.nom_equipo }} <br>
+                    Score: {{ stat.score }} <br>
+                    K_A_D: {{ stat.K_A_D }} <br>
+                    K_R: {{ stat.K_R }} <br>
+                    K_D: {{ stat.K_D }} <br>
+                    HS: {{ stat.HS }} <br>
+                    Mapa: {{ stat.mapa }} <br>
+                    Fecha: {{ stat.fecha }} <br>
+                    Elo: {{ stat.elo }} <br> <br> <hr>
+
+                {% endfor %}
+
+
               <h2>Alejandro Planells</h2>
               <div class="owl-carousel text-rotation">
                 <div class="item">
