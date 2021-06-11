@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'app_pages.apps.PagesConfig',
     'app_blog.apps.BlogConfig',
     'app_portfolio.apps.PortfolioConfig',
-    'app_score.apps.AppScoreConfig',
+    'app_stats.apps.AppStatsConfig',
 
     'taggit',
 

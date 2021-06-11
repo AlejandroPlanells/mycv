@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AppScoreConfig(AppConfig):
+class AppStatsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'app_score'
+    name = 'app_stats'

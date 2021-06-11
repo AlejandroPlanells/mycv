@@ -8,8 +8,13 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MyProject.settings')
 app = Celery('app_score')
 
 app.conf.beat_schedule = {
-    'cada_1_minuto': {
-        'task': 'app_score.tasks.stats_user',
+    'cada_1_minuto_cs': {
+        'task': 'app_stats.tasks.stats_user_cs',
+        'schedule': crontab(),
+        'args': ()
+    },
+    'cada_1_minuto_lol': {
+        'task': 'app_stats.tasks.stats_user_lol',
         'schedule': crontab(),
         'args': ()
     },
