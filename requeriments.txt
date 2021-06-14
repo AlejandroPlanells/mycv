@@ -13,4 +13,4 @@ beautifulsoup4==4.9.3
 
 celery==4.4.6
 
-
+django-jazzmin==2.4.7

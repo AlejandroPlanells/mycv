@@ -1,11 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
-
-from django.db import models
-# Create your models here.
-
 
 class csgo(models.Model):
     resultado = models.CharField(max_length=200)
@@ -18,6 +12,9 @@ class csgo(models.Model):
     mapa = models.CharField(max_length=200)
     fecha = models.CharField(max_length=200)
     elo = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name_plural = "Estadisticas CSGO"
 
 
 class lol(models.Model):
@@ -32,4 +29,7 @@ class lol(models.Model):
     nivel = models.CharField(max_length=200)
     minions = models.CharField(max_length=200)
     ckills = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name_plural = "Estadisticas LOL"
 
