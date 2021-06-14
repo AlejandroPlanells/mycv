@@ -1,7 +1,6 @@
 {% extends "../base.html" %}
 {% load static %}
 {% load blog_tags %}
-
 <!-- ************************** -->
 {% block title %}{{ post.title }}{% endblock %}
 {% block contenedor %}
@@ -18,11 +17,12 @@
                 <div class="post-content">
                   <!-- /Entry header -->
                   <header class="entry-header">
-                    <!-- Entry meta -->
+                    <!-- Entry meta
+
                     <div class="entry-meta entry-meta-top">
                       <span><a href="{% url "app_pages:inicio" %}" rel="category tag">UI</a></span>
                     </div>
-                    <!-- /Entry meta -->
+                     /Entry meta -->
 
                     <h2 class="entry-title">{{ post.title }}</h2>
                   </header>
@@ -54,18 +54,16 @@
                     </div>
 
                     <!-- Share Buttons -->
+
                     <div class="entry-share btn-group share-buttons">
-                      <a href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" class="btn" target="_blank" title="Share on Facebook">
+                      <a href="https://www.facebook.com/share/?u=https:localhost:8000{{ post.get_absolute_url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" class="btn" target="_blank" title="Share on Facebook">
                         <i class="fab fa-facebook-f"></i>
                       </a>
 
-                      <a href="#" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" class="btn" target="_blank" title="Share on Twitter">
+                      <a href="https://twitter.com/intent/tweet?text={{ post.title }} https:localhost:8000{{ post.get_absolute_url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" class="btn" target="_blank" title="Share on Twitter">
                         <i class="fab fa-twitter"></i>
                       </a>
 
-                      <a href="#" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn" title="Share on LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                      </a>
                     </div>
                     <!-- /Share Buttons -->
                   </div>
