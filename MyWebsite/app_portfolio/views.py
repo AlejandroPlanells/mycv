@@ -15,3 +15,9 @@ def portfolio_details(request, portfolio_id):
         'item': item
     }
     return render(request, 'portfolio/portfolio-details.html', context)
+
+
+def pizzeria_page(request):
+
+    return render(request, 'portfolio/pizzeria/PaginaWEB.html', {})
+

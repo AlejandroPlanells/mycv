@@ -1,4 +1,5 @@
 {% extends "../base.html" %}
+{% load static %}
 {% block titulo %}Sobre mi{% endblock %}
 {% block contenedor %}
 
@@ -12,10 +13,10 @@
   <!-- Personal Information -->
   <div class="row">
     <div class="col-xs-12 col-sm-7">
-      <p> Soy un estudiante con ganas de aprender. Tengo conocimientos de
-programación e informática de software y hardware. Dispuesto a seguir aprendiendo
-todo lo posible sobre la tecnología, la informática, y tengo curiosidad por aprender
-nuevos lenguajes. </p>
+      <p>
+          Soy un estudiante con ganas de aprender. Tengo conocimientos de programación e informática de software y hardware. Dispuesto a seguir aprendiendo
+          todo lo posible sobre la tecnología, la informática, y tengo curiosidad por aprender nuevos lenguajes.
+      </p>
     </div>
 
     <div class="col-xs-12 col-sm-5">
@@ -72,7 +73,7 @@ nuevos lenguajes. </p>
               <i class="lnr lnr-laptop-phone"></i>
             </div><div class="ci-text">
               <h4>Diseño web</h4>
-              <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
+              <p>Siempre me decanto por unos diseños, minimalistas, claros, y limpios y la hora de verlos, y al gusto del cliente sobre todo.</p>
             </div>
           </div>
 
@@ -81,8 +82,8 @@ nuevos lenguajes. </p>
               <i class="lnr lnr-store"></i>
             </div>
             <div class="ci-text">
-              <h4>Ecommerce</h4>
-              <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
+              <h4>Organización</h4>
+              <p>Apasionado por el orden y la organización. Siempre busco un codigo limpio, organizado, ordenado y entendible para otros usuarios.</p>
             </div>
           </div>
 
@@ -99,15 +100,15 @@ nuevos lenguajes. </p>
             </div>
             <div class="ci-text">
               <h4>Desempeño</h4>
-              <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
+              <p>Me amoldo a la tarea y las situciones, si me faltan conocimientos, investigo, aprendo y me pongo a ello.</p>
             </div>
           </div>
           <div class="info-block-w-icon">
             <div class="ci-icon">
               <i class="lnr lnr-flag"></i>
             </div><div class="ci-text">
-              <h4>Management</h4>
-              <p>Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.</p>
+              <h4>Hobbies</h4>
+              <p>Soy aficionado a los hobbies complicados y distintos, basados en la tecnologia, la electronica, y manualidades, como los drones, impresión 3D, etc...</p>
             </div>
           </div>
         </div>
@@ -122,7 +123,7 @@ nuevos lenguajes. </p>
   <div class="row">
     <div class="col-xs-12 col-sm-12">
       <div class="block-title">
-        <h3>Testimonials</h3>
+        <h3>Testimonios</h3>
       </div>
     </div>
   </div>
@@ -133,15 +134,15 @@ nuevos lenguajes. </p>
         <!-- Testimonial 1 -->
         <div class="testimonial">
           <div class="img">
-            <img src="img/testimonials/testimonial-1.jpg" alt="Alex Smith">
+            <img src="" alt="Abraham Apellido">
           </div>
           <div class="text">
-            <p>Vivamus at molestie dui, eu ornare orci. Curabitur vel egestas dolor. Nulla condimentum nunc sit amet urna tempus finibus. Duis mollis leo id ligula pellentesque, at vehicula dui ultrices.</p>
+            <p>Estoy terminando de crear mi web gracias a la ayuda de Alejandro, estoy encantado porque me ha asesorado en todo un mundo como es el de no solo montar una web, sino todo lo que ello conlleva, donde hay que estar conectado, redes sociales, como gestionarlo, etc...</p>
           </div>
 
           <div class="author-info">
-            <h4 class="author">Julia Hickman</h4>
-            <h5 class="company">Omni Source</h5>
+            <h4 class="author">Abraham</h4>
+            <h5 class="company">Diseñador</h5>
             <div class="icon">
               <i class="fas fa-quote-right"></i>
             </div>
@@ -152,15 +153,15 @@ nuevos lenguajes. </p>
         <!-- Testimonial 2 -->
         <div class="testimonial">
           <div class="img">
-            <img src="img/testimonials/testimonial-2.jpg" alt="Alex Smith">
+            <img src="{% static "img/testimonios/davidc.jpg" %}" alt="David Carreño">
           </div>
           <div class="text">
-            <p>Vivamus at molestie dui, eu ornare orci. Curabitur vel egestas dolor. Nulla condimentum nunc sit amet urna tempus finibus. Duis mollis leo id ligula pellentesque, at vehicula dui ultrices.</p>
+            <p>Felicitaciones a Alejandro, se ha comportado conmigo genial, me ha demostrado que es un gran amigo, gracias a su confianza, seriedad, y compañerismo que da a la hora de trabajar con el en cualquier proyecto.</p>
           </div>
 
           <div class="author-info">
-            <h4 class="author">Robert Watkins</h4>
-            <h5 class="company">Endicott Shoes</h5>
+            <h4 class="author">David Carreño</h4>
+            <h5 class="company">Desarrollo de Aplicaciones Web</h5>
             <div class="icon">
               <i class="fas fa-quote-right"></i>
             </div>
@@ -171,10 +172,10 @@ nuevos lenguajes. </p>
         <!-- Testimonial 3 -->
         <div class="testimonial">
           <div class="img">
-            <img src="img/testimonials/testimonial-3.jpg" alt="Alex Smith">
+            <img src="#" alt="Alex Smith">
           </div>
           <div class="text">
-            <p>Vivamus at molestie dui, eu ornare orci. Curabitur vel egestas dolor. Nulla condimentum nunc sit amet urna tempus finibus. Duis mollis leo id ligula pellentesque, at vehicula dui ultrices.</p>
+            <p>He tenido la suerte de contar con la ayuda de Andrea para montar mi propia Web. Soy escritora y gracias a su orientación pude ver que montar una web propia donde mostrar mi trabajo, me daba visibilidad y mucha más gente podía llegar a conocerme y conocer lo que hago..</p>
           </div>
 
           <div class="author-info">
@@ -193,11 +194,11 @@ nuevos lenguajes. </p>
 
   <div class="white-space-50"></div>
 
-  <!-- Clients -->
+  <!-- Trabajado con -->
   <div class="row">
     <div class="col-xs-12 col-sm-12">
       <div class="block-title">
-        <h3>Cilents</h3>
+        <h3>Trabajo con:</h3>
       </div>
     </div>
   </div>
@@ -207,46 +208,43 @@ nuevos lenguajes. </p>
       <div class="clients owl-carousel">
 
         <div class="client-block">
-          <a href="#" target="_blank" title="Logo">
-            <img src="img/clients/client-1.png" alt="Logo">
+          <a href="https://www.facebook.com/Inform%C3%A1tica-Russafa-385939761609534/" target="_blank" title="Informatica Russafa">
+            <img src="{% static "img/clientes/git.png" %}" alt="Informatica Russafa">
           </a>
         </div>
 
         <div class="client-block">
-          <a href="#" target="_blank" title="Logo">
-            <img src="img/clients/client-2.png" alt="Logo">
+          <a href="https://www.spainity.com" target="_blank" title="Spainity">
+            <img src="{% static "img/clientes/django.png" %}" alt="Spainity">
           </a>
         </div>
 
         <div class="client-block">
-          <a href="#" target="_blank" title="Logo">
-            <img src="img/clients/client-3.png" alt="Logo">
+          <a href="https://www.facebook.com/Inform%C3%A1tica-Russafa-385939761609534/" target="_blank" title="Informatica Russafa">
+            <img src="{% static "img/clientes/angular-js-logo.png" %}" alt="Informatica Russafa">
           </a>
         </div>
 
         <div class="client-block">
-          <a href="#" target="_blank" title="Logo">
-            <img src="img/clients/client-4.png" alt="Logo">
+          <a href="https://www.facebook.com/Inform%C3%A1tica-Russafa-385939761609534/" target="_blank" title="Informatica Russafa">
+            <img src="{% static "img/clientes/rabbit.png" %}" alt="Informatica Russafa">
           </a>
         </div>
 
         <div class="client-block">
-          <a href="#" target="_blank" title="Logo">
-            <img src="img/clients/client-5.png" alt="Logo">
+          <a href="https://www.facebook.com/Inform%C3%A1tica-Russafa-385939761609534/" target="_blank" title="Informatica Russafa">
+            <img src="{% static "img/clientes/htmlcssjs.png" %}" alt="Informatica Russafa">
           </a>
         </div>
 
         <div class="client-block">
-          <a href="#" target="_blank" title="Logo">
-            <img src="img/clients/client-6.png" alt="Logo">
+          <a href="https://www.facebook.com/Inform%C3%A1tica-Russafa-385939761609534/" target="_blank" title="Informatica Russafa">
+            <img src="{% static "img/clientes/mysql.png" %}" alt="Informatica Russafa">
           </a>
         </div>
 
-        <div class="client-block">
-          <a href="#" target="_blank" title="Logo">
-            <img src="img/clients/client-7.png" alt="Logo">
-          </a>
-        </div>
+
+
 
       </div>
     </div>
@@ -352,8 +350,8 @@ nuevos lenguajes. </p>
     <div class="col-xs-12 col-sm-4 ">
       <div class="fun-fact gray-default">
         <i class="lnr lnr-star"></i>
-        <h4>Contentos</h4>
-        <span class="fun-fact-block-value">5/5</span>
+        <h4>Compañeros satisfechos</h4>
+        <span class="fun-fact-block-value">8/8</span>
         <span class="fun-fact-block-text"></span>
       </div>
     </div>

@@ -4,5 +4,6 @@ from .import views
 
 urlpatterns = [
     path('', views.portfolio_page, name='portfolio'),
-    path('details/<int:portfolio_id>', views.portfolio_details, name='portfolio-details')
+    path('details/<int:portfolio_id>', views.portfolio_details, name='portfolio-details'),
+    path('pizzeria/', views.pizzeria_page, name="pizzeria"),
 ]
